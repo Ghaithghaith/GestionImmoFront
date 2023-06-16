@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PiDevGestionImmo"
+    }
+  },
+  "defaultProject": "PiDevGestionImmo",
+  "cli": {
+    "analytics": false
+  }
 }
