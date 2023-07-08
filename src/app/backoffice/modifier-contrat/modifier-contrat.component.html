@@ -1,0 +1,21 @@
+<br>
+<br>
+<br>
+<form #f="ngForm" [formGroup]="formContrat">
+  <div class="form-group">
+    <label>titre</label>
+    <input [(ngModel)]="contrat.titre" id="titre" name="titre" class="form-control" type="text" formControlName="titre">
+  </div>
+
+
+  <div class="form-group">
+    <label >description</label>
+    <input [(ngModel)]="contrat.description" id="description" name="description" class="form-control" type="text" formControlName="description">
+  </div>
+
+
+
+  <div class="input-group mb-3">
+    <button (click)="updateContrat(f.value)" onclick="location.href='http://localhost:4200/admin/listcontrats'" class="btn btn-outline-secondary" type="button" id="button-addon1">Update</button>
+  </div>
+</form>

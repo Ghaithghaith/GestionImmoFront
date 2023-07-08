@@ -1,0 +1,25 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form #f="ngForm">
+
+
+  <label > status</label>
+  <input type="text" name="status" class="form-control" ngModel >
+  <br>
+  <label> description</label>
+  <input type="text" name="description" class="form-control" ngModel>
+
+
+  <br>
+
+
+
+  <div class="col-md-16 bg-light ">
+    <button type="button" class="btn btn-primary" value="Ajouter" (click)="save(f.value)" onclick="location.href='http://localhost:4200/admin/listreclamations'" class="btn btn-primary" >AJOUTER </button>
+  </div>
+
+</form>

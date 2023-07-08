@@ -1,0 +1,65 @@
+<br xmlns:searcha="http://www.w3.org/1999/xhtml" xmlns:search="http://www.w3.org/1999/xhtml">
+<br>
+<br>
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<div class="content-wrapper">
+<div class="d-xl-flex justify-content-between align-items-start">
+
+  <h2 class="text-dark font-weight-bold mb-2"> List Reclamations </h2>
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;Recherche...">
+  </div>
+
+  <div class="col-md-16 bg-light ">
+    <button type="button" onclick="location.href='http://localhost:4200/admin/addreclamation'" class="btn btn-inverse-primary" >AJOUTER NEW RECLAMATION </button>
+  </div>
+
+  <div class="col-md-16 bg-light ">
+    <button type="button" (click)="save()" class="btn btn-inverse-primary" >COUNT</button>
+    <div>{{count}}</div>
+  </div>
+
+  <div class="col-md-16 bg-light ">
+    <button type="button" (click)="save1()" class="btn btn-inverse-primary" >AVERAGE</button>
+    <div>{{average}}</div>
+  </div>
+  <div class="col-md-16 bg-light ">
+    <button type="button" (click)="downloadReclamations()" class="btn btn-inverse-primary" >Export</button>
+    <div>{{export}}</div>
+  </div>
+  <br>
+  <br>
+<br>
+  <div class="d-sm-flex justify-content-xl-between align-items-center mb-2">
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  <tr class="">
+    <th>#</th>
+    <th>Status</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let r of reclamations| filter:searchText">
+    <td scope="row">1</td>
+    <td>{{r.status}}</td>
+    <td>{{r.description}}</td>
+    <button [routerLink]="['/admin/supprimerreclamation/',r.idReclamation ]"class="btn-github">delete</button>
+    <button [routerLink]="['./updateReclamation', r.idReclamation]" class="btn-twitter" type="button" id="button-addon">Update</button>
+  </tr>
+  </tbody>
+</table>
+</div>

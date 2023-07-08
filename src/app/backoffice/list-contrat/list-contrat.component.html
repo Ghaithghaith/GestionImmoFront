@@ -1,0 +1,56 @@
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<div class="content-wrapper">
+  <div class="d-xl-flex justify-content-between align-items-start">
+    <h2 class="text-dark font-weight-bold mb-2"> List des Cotrats </h2>
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;Recherche...">
+    </div>
+
+
+    <div class="col-md-16 bg-light ">
+      <button type="button" onclick="location.href='http://localhost:4200/admin/addcontrat'" class="btn btn-inverse-primary" >AJOUTER NEW CONTRAT </button>
+    </div>
+    <div class="col-md-16 bg-light ">
+      <button type="button" (click)="save()" class="btn btn-inverse-primary" >COUNT</button>
+      <div>{{count}}</div>
+    </div>
+    <div class="col-md-16 bg-light ">
+      <button type="button" (click)="save3()" class="btn btn-inverse-primary" >AVERAGE</button>
+      <div>{{average}}</div>
+    </div>
+
+    <div class="col-md-16 bg-light ">
+      <button type="button" (click)="downloadContrats()" class="btn btn-inverse-primary" >Export</button>
+      <div>{{export}}</div>
+    </div>
+    <div class="d-sm-flex justify-content-xl-between align-items-center mb-2">
+    </div>
+  </div>
+
+<table class="table">
+  <thead>
+  <tr class="">
+    <th>#</th>
+    <th>Titre</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let c of contrats | filter:searchText">
+    <td scope="row">1</td>
+    <td>  {{c.titre}}</td>
+    <td>{{c.description}}</td>
+    <button [routerLink]="['/admin/supprimercontrat/',c.idContrat ]"class="btn-github">delete</button>
+    <button [routerLink]="['./updateContrat', c.idContrat]" class="btn-twitter" type="button" id="button-addon1">Update</button>
+
+  </tr>
+  </tbody>
+</table>
+</div>
