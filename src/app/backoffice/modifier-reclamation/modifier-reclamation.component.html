@@ -1,0 +1,21 @@
+<br>
+<br>
+<br>
+<form #f="ngForm" [formGroup]="formReclamation">
+  <div class="form-group">
+    <label>status</label>
+    <input [(ngModel)]="reclamation.status" id="status" name="status" class="form-control" type="text" formControlName="status">
+  </div>
+
+
+  <div class="form-group">
+    <label >description</label>
+    <input [(ngModel)]="reclamation.description" id="description" name="description" class="form-control" type="text" formControlName="description">
+  </div>
+
+
+
+  <div class="input-group mb-3">
+    <button (click)="updateReclamation(f.value)" onclick="location.href='http://localhost:4200/admin/listreclamations'" class="btn btn-outline-secondary" type="button" id="button-addon1">Update</button>
+  </div>
+</form>
